@@ -8,8 +8,6 @@ console.log(path.join(_dirname, 'text.txt'))
 console.log('Введите текст: ')
 fs.open(path.join(_dirname, 'text.txt'), 'a+', (err) => {
    if (err) throw err;
-   // console.log(err)
-   // console.log('Что-то с открытием файла пошло не так')
 })
 
 const rl = readline.createInterface({ input, output })
@@ -22,8 +20,6 @@ rl.on('line', (answer) => {
    } else {
       fs.appendFile(path.join(_dirname, 'text.txt'), str, (err) => {
          if (err) throw err;
-         // console.log(err)
-         // console.log('Что-то с записью в файл пошло не так')
       })
    }
 });
