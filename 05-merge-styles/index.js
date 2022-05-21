@@ -1,7 +1,6 @@
 const { readdir } = require('fs/promises')
 const fs = require('fs')
 const path = require('path')
-const arrStyle = []
 
 fs.open(path.join(__dirname, 'project-dist', 'bundle.css'), 'w', (err) => {
    if (err) throw err;
