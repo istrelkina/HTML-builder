@@ -1,12 +1,11 @@
 const { readdir } = require('fs/promises')
 const fs = require('fs')
 const path = require('path')
-let files;
 
 async function copyFiles(pathSrc, pathDest, dir) {
    makeDir(pathDest, dir)
    try {
-      files = await readdir(path.join(pathSrc, dir), 'utf8', true)
+      const files = await readdir(path.join(pathSrc, dir), 'utf8', true)
       for (const file of files) {
          fs.stat(path.join(pathSrc, dir, file), (err, stats) => {
             if (err) throw err;
